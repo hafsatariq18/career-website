@@ -1,0 +1,44 @@
+<!Doctype html>
+<html>
+<head>
+<title>{{job.title}} - Informatics Careers</title>
+<style>
+  h1{
+    font-size:40px;
+    font-family:Roboto;
+    font-weight:normal; 
+    color: rgb(100, 100, 100);;
+    text-align:center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;}
+  </style>
+{% include 'bootstrap.html' %}
+{% include 'banner.html' %}
+<div class = "container"> 
+<h1 class="text-center mt-2 mb-4">Informatics Careers</h1>
+</head>
+<body>
+<h3 class ="mb-2">{{job.title}}</h3>
+<p class = "lead">{{job.location}}</p>
+
+<h4>Responsibilities</h4>
+<ul>
+{% for line in job.responsibilities.split("\n")%}
+<li>{{line}}</li>
+{% endfor %}
+</ul>
+<h4>Requirements</h4>
+<ol>
+{% for line in job.requirements.split("\n")%}
+<li>{{line}}</li>
+{% endfor %}
+</ol>
+<p>{{job.requirements}}</p>
+<h4>Salary</h4>
+<p>{{job.currency}}{{job.salary}}</p>
+</div>
+{% include 'footer.html' %}
+</body>
+
+  
+</html>

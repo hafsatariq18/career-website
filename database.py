@@ -16,3 +16,12 @@ def load_jobs_from_db():
       for row in result.mappings().all():
           jobs.append(dict(row))
       return jobs
+      
+def load_job_from_db(id):
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * FROM jobs WHERE id = :val"), {"val": id})
+        row = result.mappings().first()
+        if row is None:
+            return None
+        else:
+            return dict(row)
