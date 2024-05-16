@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+<head>
+<title> Application Submitted</title>
+{% include 'bootstrap.html' %}
+{% include 'banner.html' %}
+<style>
+h1{
+  font-size:40px;
+  font-family:Roboto;
+  font-weight:normal; 
+  color: rgb(100, 100, 100);;
+  text-align:center;
+margin-top: 2rem;
+margin-bottom: 5rem;}
+</style>
+</head>
+<body>
+<div class = "container"> 
+<h1 class="text-center mt-2 mb-4">Informatics Careers</h1>
+<p>Your Application for the role of <b>{{job['title']}}</b> at Informatics Career has been Submitted!</p>
+<b>Full Name</b>
+<div>{{application['full_name']}}</div><br>
+<b>Email</b>
+<div>{{application['email']}}</div><br>
+<b>LinkedIn URL</b>
+<div>{{application['Linkedin']}}</div><br>
+<b>Education</b>
+<div>{{application['Education']}}</div><br>
+<b>Work Experience</b>
+<div>{{application['Work Experience']}}</div><br>
+<b>Resume URL</b>
+<div>{{application['Resume']}}</div>
+
+
+{% include 'footer.html' %}
+</div>
+
+
+</body>
+</html>
